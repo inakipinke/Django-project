@@ -1,0 +1,9 @@
+1- Hay que hacer primero un pull para ver si los otros subieron algun cambio.
+2- Arrastra los archivos que cambiaste y reemplazalos si ya existen en la carpeta del proyecto.
+3- Cuando termines pone "git add ." en la terminal, en la carpeta raíz del proyecto.
+4- Lo que sigue es "git commit -m y entre comillas ponen un comentario de lo que realizaron, por ej: "termine la base de datos""
+5- Por ultimo ponen "git push" en la terminal, github les va a pedir que se logeen, y cuando terminen de logearse el proyecto cambiado se sube.
+
+#No trabajen en la misma carpeta que en la de github, esta es solo para compartir cambios, y si trabajan ahi y alguien mas hace un push, pueden perder el trabajo de un dia minimo.
+
+#No hagan push sin avisar, avisen por el grupo de whatsapp.
