@@ -11,3 +11,6 @@ def registrar(request):
 
 def postear(request):
 	return render(request, 'twitter/postear.html')
+
+def calendario(request):
+	return render(request, 'twitter/Calendario.html')
