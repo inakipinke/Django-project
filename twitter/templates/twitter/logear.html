@@ -24,32 +24,24 @@
 	<br>
 	<br>
 	<div class="row">
-		<form action="{% url 'postear' %}" method="POST" class="col s12">
-
+		<form action="{% url 'logear' %}" method="POST" class="col s12">
 			<div class="row">
+
 				<div class="input-field col s6">
-					<input placeholder=" " id="usuer" name='titulo2' class="validate" type="text">
-					<label for="usuer" class="active">Titulo</label>
+					<input placeholder=" " id="usuer" name='user3' class="validate" type="text">
+					<label for="usuer" class="active">Usuario</label>
 				</div>
 			</div>
-
 			<div class="row">
 				<div class="input-field col s6">
-					<input placeholder=" " id="passw" name='texto2' class="validate" type="text">
-					<label for="passw" class="active">Texto</label>
-				</div>
-			</div>
-
-			<div class="row">
-				<div class="input-field col s6">
-					<input placeholder=" " id="passw" name='link2' class="validate" type="text">
-					<label for="passw" class="active">Link</label>
+					<input placeholder=" " id="passw" name='pass3' class="validate" type="password">
+					<label for="passw" class="active">Contraseña</label>
 				</div>
 			</div>
 
 			{% csrf_token %}
 			
-			<input class="waves-effect waves-light btn" type="submit" value="Postear">
+			<input class="waves-effect waves-light btn" type="submit" value="Logearse">
 		</form>
 	</div>
 </body>
