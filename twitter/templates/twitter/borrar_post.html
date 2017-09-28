@@ -15,34 +15,29 @@
 			<a href="#" class="brand-logo">Calendar</a>
 
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
-				<li><a href="http://127.0.0.1:8000/postear/">Postear</a></li>
+				<li><a href="">Postear</a></li>
 				<li><a href="http://127.0.0.1:8000/register/">Registrarse</a></li>|
-				<li><a href="collapsible.html">JavaScript</a></li>
+				<li><a href="http://127.0.0.1:8000/">Posts</a></li>
 			</ul>
 		</div>
 	</nav>
 	<br>
-	<br>
 	<div class="row">
-		<form action="{% url 'logear' %}" method="POST" class="col s12">
+		<form action="{% url 'borrar_post' %}" method="POST" class="col s12">
 			<div class="row">
 
 				<div class="input-field col s6">
-					<input placeholder=" " id="usuer" name='user3' class="validate" type="text">
-					<label for="usuer" class="active">Usuario</label>
+					<input placeholder=" " id="postt" name='borrarxd' class="validate" type="text">
+					<label for="postt" class="active">Post:</label>
 				</div>
 			</div>
-			<div class="row">
-				<div class="input-field col s6">
-					<input placeholder=" " id="passw" name='pass3' class="validate" type="password">
-					<label for="passw" class="active">Contraseña</label>
-				</div>
-			</div>
-
 			{% csrf_token %}
-			
-			<input class="waves-effect waves-light btn" type="submit" value="Logearse">
+			<input class="waves-effect waves-light btn" type="submit" value="Borrar post" action="{% url 'borrar_post' %}">
 		</form>
+	</div>
+	<br><br><br>
+	<div class="center">
+		<a class="waves-effect waves-light btn white blue-text" href="http://127.0.0.1:8000/">Volver</a>
 	</div>
 </body>
 

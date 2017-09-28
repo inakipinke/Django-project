@@ -13,11 +13,13 @@
 
 	<nav>
 		<div class="nav-wrapper blue">
-			<a href="#" class="brand-logo">Twitter</a>
+			<a href="#" class="brand-logo">Calendar</a>
 
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
 				<li><a href="/postear/">Postear</a></li>
 				<li><a href="/register/">Registrar</a></li>
+				<li><a href="/login/">Logear</a></li>
+				<li><a href="/borrar/">Borrar post</a></li>
 			</ul>
 		</div>
 	</nav>
@@ -29,7 +31,7 @@
 					<span class="card-title">{{ post.title }}</span>
 					<hr>
 					<div>
-						<h6>publicado el dia: {{ post.published_date }}</h6>
+						<!--<h6>publicado el dia: {{ post.published_date }}</h6>-->
 						<p class="flow-text">{{ post.text|linebreaksbr }}</p>
 					</div>
 				</div>
@@ -42,6 +44,5 @@
 	</div>
 	
 	{% endfor %}
-	{ user }
 </body>
 </html>
