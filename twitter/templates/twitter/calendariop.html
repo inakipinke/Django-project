@@ -1,19 +1,30 @@
 <!DOCTYPE html>
 <html>
 <head>
-
+	<title>Calendario</title>
 	<!-- Compiled and minified CSS -->
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
 
 	<!-- Compiled and minified JavaScript -->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+	<href rel='stylesheet' href='fullcalendar.css'>
+	<script src='jquery.min.js'></script>
+	<script src='moment.js'></script>
+	<script src='fullcalendar.js'></script>
+	<script>
+		$(document).ready(function() {
+			// page is now ready, initialize the calendar...
+			$('#calendar').fullCalendar({
+				// put your options and callbacks here
+			})
+		});
 
+	</script>
 </head>
 <body bgcolor="#0061bf">
 
 	<nav>
 		<div class="nav-wrapper blue">
-			<img href="#" src="http://fullcalendar.io/images/logo.svg">
 			<a href="#" class="brand-logo">Calendar</a>
 
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
@@ -25,26 +36,7 @@
 		</div>
 	</nav>
 
-	{% for post in posts %}
-	<div class="row">
-		<div class="col s12 m6">
-			<div class="card blue">
-				<div class="card-content white-text">
-					<span class="card-title">{{ post.title }}</span>
-					<hr>
-					<div>
-						<!--<h6>publicado el dia: {{ post.published_date }}</h6>-->
-						<p class="flow-text">{{ post.text|linebreaksbr }}</p>
-					</div>
-				</div>
-				<div class="card-action">
-					<!--<a href="{{ post.link }}" class="white-text">{{ post.link }}</a>-->
-					<a class="waves-effect waves-light btn grey" href="{{ post.link }}">{{ post.link }}</a>
-				</div>
-			</div>
-		</div>
-	</div>
-	
-	{% endfor %}
+	<div id='calendar'></div>
+
 </body>
 </html>

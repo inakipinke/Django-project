@@ -67,4 +67,4 @@ def logear(request):
     return render(request, 'twitter/logear.html')
 
 def calendario(request):
-	return render(request, 'twitter/Calendario.html')
+	return render(request, 'twitter/calendariop.html')
