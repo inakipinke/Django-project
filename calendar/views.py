@@ -5,6 +5,7 @@ from .models import Post
 from .models import usuario
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
+from django.contrib.auth.models import Group
 
 
 def post_list(request):
@@ -15,7 +16,7 @@ def post_list(request):
 	if (post_borrar2 != ""):
 		postb2 = Post.objects.filter(title=post_borrar2)
 		postb2.delete()
-	return render(request, 'twitter/post_list.html', {'posts': posts})
+	return render(request, 'calendar/post_list.html', {'posts': posts})
 
 def borrar_post(request):
 	post_borrar = request.POST.get('borrarxd','')
@@ -23,7 +24,7 @@ def borrar_post(request):
 		postb = Post.objects.filter(title=post_borrar)
 		postb.delete()
 
-	return render(request, 'twitter/borrar_post.html',)
+	return render(request, 'calendar/borrar_post.html',)
 
 
 def registrar(request):
@@ -37,7 +38,7 @@ def registrar(request):
 		user.save()
 	except ValueError as aValueError:
 		pass
-	return render(request, 'twitter/registrar.html')
+	return render(request, 'calendar/registrar.html')
 
 def postear(request):
 	usr = request.user
@@ -51,7 +52,7 @@ def postear(request):
 	else:
 		print("no funciono el post")
 	print(".-.-.-.-.-.-.")
-	return render(request, 'twitter/postear.html')
+	return render(request, 'calendar/postear.html')
 
 def logear(request):
     username = request.POST.get('user3','')
@@ -61,10 +62,19 @@ def logear(request):
     if (user2 is not None):
         login(request, user2)
         print("funciono el login")
-        return render(request, 'twitter/postear.html')
+        return render(request, 'calendar/postear.html')
     else:
         print("no funciono el login")
-    return render(request, 'twitter/logear.html')
+    return render(request, 'calendar/logear.html')
 
 def calendario(request):
-	return render(request, 'twitter/calendariop.html')
+	return render(request, 'calendar/calendariop.html')
+
+def crear_grupo(request):
+	usr1 = request.user
+	nombreee = request.POST.get('nombree','')
+	return render(request, 'calendar/groups.html')
+	group12 = Group.objects.get_or_create(name=nombreee)
+	if ((group12 is not None) and (nombreee!="")):
+		print("xdxdxd")
+		group12.save()

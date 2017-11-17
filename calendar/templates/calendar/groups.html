@@ -9,36 +9,35 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
 
 </head>
-<body bgcolor="#0061bf">
+<body bgcolor="#ffffff">
 	<nav>
-		<div class="nav-wrapper blue">
+		<div class="nav-wrapper orange">
 			<a href="#" class="brand-logo">Calendar</a>
 
 			<ul id="nav-mobile" class="right hide-on-med-and-down">
-				<li><a href="">Postear</a></li>
-				<li><a href="http://127.0.0.1:8000/register/">Registrarse</a></li>|
+
+				<li><a href="http://127.0.0.1:8000/register/">Registrarse</a></li>
+				<li><a href="http://127.0.0.1:8000/login/">Logearse</a></li>
 				<li><a href="http://127.0.0.1:8000/">Posts</a></li>
 			</ul>
 		</div>
 	</nav>
 	<br>
-	<div class="row">
-		<form action="{% url 'borrar_post' %}" method="POST" class="col s12">
-			<div class="row">
+	<br>
 
+	<div class="row">
+		<form action="{% url 'crear_grupo' %}" method="POST" class="col s12">
+			<div class="row">
 				<div class="input-field col s6">
-					<input placeholder=" " id="postt" name='borrarxd' class="validate" type="text">
-					<label for="postt" class="active">Post:</label>
+					<input placeholder=" " id="nombre" name='nombree' class="validate" type="text">
+					<label for="usuer" class="active">Titulo</label>
 				</div>
 			</div>
 			{% csrf_token %}
-			<input class="waves-effect waves-light btn" type="submit" value="Borrar post" action="{% url 'borrar_post' %}">
+			<input class="waves-effect waves-light btn orange" type="submit" value="Crear grupo">
 		</form>
 	</div>
-	<br><br><br>
-	<div class="center">
-		<a class="waves-effect waves-light btn white blue-text" href="http://127.0.0.1:8000/">Volver</a>
-	</div>
+
 </body>
 
 
