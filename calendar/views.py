@@ -2,10 +2,10 @@ from __future__ import print_function
 from django.shortcuts import render
 from django.utils import timezone
 from .models import Post
-from .models import usuario
 from django.contrib.auth import authenticate, login
 from django.contrib.auth.models import User
-from django.contrib.auth.models import Group
+from django.contrib.auth.models import Group, Permission
+from django.contrib.contenttypes.models import ContentType
 
 
 def post_list(request):
@@ -25,7 +25,6 @@ def borrar_post(request):
 		postb.delete()
 
 	return render(request, 'calendar/borrar_post.html',)
-
 
 def registrar(request):
 	nickname2 = request.POST.get('user1','')
@@ -73,8 +72,12 @@ def calendario(request):
 def crear_grupo(request):
 	usr1 = request.user
 	nombreee = request.POST.get('nombree','')
-	return render(request, 'calendar/groups.html')
 	group12 = Group.objects.get_or_create(name=nombreee)
 	if ((group12 is not None) and (nombreee!="")):
-		print("xdxdxd")
-		group12.save()
+		print("GRUPO_CREADO")
+	return render(request, 'calendar/groups.html')
+
+def entrar_en_grupo(request):
+	usr2 = request.user
+	grupos = Group.objects.filter()
+	return render(request, 'calendar/group_list.html', {'grupos': grupos})

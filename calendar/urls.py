@@ -9,4 +9,5 @@ url(r'^borrar/', views.borrar_post, name='borrar_post'),
 url(r'^postear/', views.postear, name='postear'), 
 url(r'^calendario/', views.calendario, name='calendario'),
 url(r'^grupo/', views.crear_grupo, name='crear_grupo'),
+url(r'^entrargrupo/', views.entrar_en_grupo, name='entrar_en_grupo'),
 ]

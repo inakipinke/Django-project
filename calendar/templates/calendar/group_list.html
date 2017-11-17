@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+	<!-- Compiled and minified CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/css/materialize.min.css">
+
+	<!-- Compiled and minified JavaScript -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.2/js/materialize.min.js"></script>
+
+</head>
+<body bgcolor="#0061bf">
+
+	<nav>
+		<div class="nav-wrapper blue">
+			<img href="#" src="http://fullcalendar.io/images/logo.svg">
+			<a href="#" class="brand-logo">Calendar</a>
+
+			<ul id="nav-mobile" class="right hide-on-med-and-down">
+				<li><a href="/postear/">Postear</a></li>
+				<li><a href="/register/">Registrar</a></li>
+				<li><a href="/login/">Logear</a></li>
+				<li><a href="/borrar/">Borrar post</a></li>
+			</ul>
+		</div>
+	</nav>
+
+	{% for grupo in grupos %}
+	<div class="row">
+		<div class="col s12 m6">
+			<div class="card blue">
+				<div class="card-content white-text">
+					<span class="card-title">{{ grupo.name }}</span>
+				</div>
+				<div class="card-action">
+					<!--<a href="{{ post.link }}" class="white-text">{{ post.link }}</a>-->
+					<a class="waves-effect waves-light btn grey" href="{{ grupo.entrar }}">Entrar en el grupo</a>
+				</div>
+			</div>
+		</div>
+	</div>
+	
+	{% endfor %}
+</body>
+</html>
